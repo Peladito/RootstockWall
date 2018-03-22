@@ -15,6 +15,6 @@ contract RootstockWall {
     /** sets a new message */
     function setMessage(string _newMessage) public {
         message = _newMessage;
-        NewBud(_newMessage);
+        emit NewBud(_newMessage);
     }
 }

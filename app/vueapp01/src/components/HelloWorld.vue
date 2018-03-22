@@ -36,7 +36,7 @@ export default {
 
 
            this.buttonLabel= 'Writting <i class="fa fa-cog fa-spin">';
-           this.contract.setMessage.call(inputTexted).then(function(v) {
+           this.contract.setMessage(this.inputText).then(function(v) {
            var strName= v.toString();
            this.buttonLabel= 'Writting <i class="fa fa-cog">';
                     });
