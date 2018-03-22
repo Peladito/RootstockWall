@@ -2,8 +2,11 @@
 Hello World smart contract
 
 truffle init
+
 cd ../migrations
+
 create archive 2_deploy_contract.js
+
 edit archive with: 
 
 
