@@ -1,15 +1,19 @@
 <template>
   <div class="container">
+     
                     <h2>Rootstock Wall</h2>
                     <hr>
-                    <form class="form-inline">
-                        <div class="form-group col-md-8">
-                            <label for="inputText" class="sr-only">Message</label>
-                            <input type="text" class="form-control" v-model="inputText" placeholder="Your text...">
-                        </div>
-                        <button type="button" class="btn btn-primary mb-2" v-on:click="makeBud">{{buttonLabel}}</button>
-                    {{message}}
-                    </form>
+                   
+                    <b-input-group prepend="Your inmortall words">
+    <b-form-input v-model="inputText"></b-form-input>
+    <b-input-group-append>
+      <b-btn variant="info"  v-on:click="makeBud">{{buttonLabel}}</b-btn>
+    </b-input-group-append>
+  </b-input-group>
+  <div id='stiches'> 
+    <h3>{{message}}</h3>
+    </div>
+   
                 </div>
 </template>
 
@@ -31,13 +35,11 @@ export default {
             
             var contractAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10'
             this.contract = web3.eth.contract(abi).at(contractAddress);
+           this.contract.allEvents({},this.addLog)
+           
 
   },
-  ready: function (){
-     setInterval(function () {
-      this.loadData();
-    }.bind(this), 5000); 
-  },
+ 
  methods:{
        makeBud: function(){
            this.buttonLabel= 'Writting ...';
@@ -49,12 +51,11 @@ export default {
           });
                 
        },
-       loadData: function(){
-         this.contract.message.call((message)=>{
+      
+       addLog: function(err, logg){
+         this.contract.message((error, message)=>{
            this.message=message
-            console.log(this.contract)
          })
-        
        }
     }
 
@@ -66,6 +67,32 @@ export default {
   .container {
             text-align: center;
         }
+       #stiches h3 {
+ font-size: 80px;
+ line-height: 70px;
+ font-family: 'Times New Roman', Times, serif, sans-serif;
+ font-weight: bold;
+ text-align: center;
+
+}
+ 
+#stiches {
+ background-color: white;
+ height: 200px;
+
+ margin: 100px auto;
+ border: 3px dashed #21303b;
+ padding: 50px;
+ overflow: auto;
+ 
+ /*shadow*/
+ -webkit-box-shadow: 10px 10px 10px rgb(129, 117, 117);
+ -moz-box-shadow: 10px 10px 10px  rgb(129, 117, 117);
+ box-shadow: 10px 10px 10px  rgb(129, 117, 117);
+ 
+ /*rounded corners*/
+ -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ border-radius: 20px;
+}
 </style>
-<style href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></style>
-<style href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></style>
