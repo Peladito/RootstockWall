@@ -1,19 +1,28 @@
 <template>
   <div class="container">
-     
-                    <h2>Rootstock Wall</h2>
-                    <hr>
-                   
+     <b-container >
+    <b-row>
+      
+        <b-col > <img src="../assets/logo.png"></b-col>
+ 
+        <b-col class="bv-col">
+
+                 
                     <b-input-group prepend="Your inmortall words">
     <b-form-input v-model="inputText"></b-form-input>
     <b-input-group-append>
-      <b-btn variant="info"  v-on:click="makeBud">{{buttonLabel}}</b-btn>
+      <b-btn variant="info"  v-on:click="makeBud">{{buttonLabel}} <i class="fa fa-cog fa-spin" v-if="spining" style="font-size:24px"></i></b-btn>
     </b-input-group-append>
   </b-input-group>
   <div id='stiches'> 
     <h3>{{message}}</h3>
     </div>
    
+        </b-col>
+    </b-row>
+</b-container>
+       
+            
                 </div>
 </template>
 
@@ -24,7 +33,7 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       contract : null,
-      buttonLabel:"Write on stone",
+      buttonLabel:"Stich them forever",
       inputText:"",
       message:''
     }
@@ -39,14 +48,18 @@ export default {
            
 
   },
- 
+ computed:{
+   spining: function(){
+     return this.buttonLabel==='Writting'
+   }
+ },
  methods:{
        makeBud: function(){
-           this.buttonLabel= 'Writting ...';
+           this.buttonLabel= 'Writting';
 
            this.contract.setMessage(this.inputText,() => {
              
-             this.buttonLabel= 'Write on stone';
+            
              this.loadData()
           });
                 
@@ -55,6 +68,7 @@ export default {
        addLog: function(err, logg){
          this.contract.message((error, message)=>{
            this.message=message
+            this.buttonLabel= 'Stich them forever';
          })
        }
     }
@@ -66,6 +80,7 @@ export default {
 <style scoped>
   .container {
             text-align: center;
+           
         }
        #stiches h3 {
  font-size: 80px;
@@ -73,12 +88,18 @@ export default {
  font-family: 'Times New Roman', Times, serif, sans-serif;
  font-weight: bold;
  text-align: center;
+ 
 
 }
- 
+.bv-col{
+   padding-top: 150px;
+   padding-left: 30px;
+   
+}
+
 #stiches {
  background-color: white;
- height: 200px;
+
 
  margin: 100px auto;
  border: 3px dashed #21303b;
@@ -96,3 +117,4 @@ export default {
  border-radius: 20px;
 }
 </style>
+<style href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
