@@ -8,6 +8,7 @@
                             <input type="text" class="form-control" v-model="inputText" placeholder="Your text...">
                         </div>
                         <button type="button" class="btn btn-primary mb-2" v-on:click="makeBud">{{buttonLabel}}</button>
+                    {{message}}
                     </form>
                 </div>
 </template>
@@ -20,7 +21,8 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       contract : null,
       buttonLabel:"Write on stone",
-      inputText:""
+      inputText:"",
+      message:''
     }
   },
    beforeMount: function(){
@@ -31,6 +33,11 @@ export default {
             this.contract = web3.eth.contract(abi).at(contractAddress);
 
   },
+  ready: function (){
+     setInterval(function () {
+      this.loadData();
+    }.bind(this), 5000); 
+  },
  methods:{
        makeBud: function(){
            this.buttonLabel= 'Writting ...';
@@ -38,8 +45,16 @@ export default {
            this.contract.setMessage(this.inputText,() => {
              
              this.buttonLabel= 'Write on stone';
+             this.loadData()
           });
                 
+       },
+       loadData: function(){
+         this.contract.message.call((message)=>{
+           this.message=message
+            console.log(this.contract)
+         })
+        
        }
     }
 
