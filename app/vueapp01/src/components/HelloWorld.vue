@@ -38,14 +38,16 @@ export default {
       message:''
     }
   },
-   beforeMount: function(){
+   beforeMount: async function(){
       
      var abi = [{"constant":true,"inputs":[],"name":"message","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"initialMessage","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"newMessage","type":"string"}],"name":"weHaveAMessage","type":"event"},{"constant":false,"inputs":[{"name":"_newMessage","type":"string"}],"name":"setMessage","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]
             
             var contractAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10'
-            this.contract = web3.eth.contract(abi).at(contractAddress);
-           this.contract.allEvents({},this.addLog)
-           
+   
+            this.contract = new this.web3.eth.Contract(abi, contractAddress);
+            this.message = await this.contract.methods.message().call() 
+            
+           //this.contract.events.allEvents({},this.addLog)
 
   },
  computed:{
@@ -54,22 +56,20 @@ export default {
    }
  },
  methods:{
-       makeBud: function(){
+       makeBud: async function(){
            this.buttonLabel= 'Writting';
 
-           this.contract.setMessage(this.inputText,() => {
-             
-            
-             this.loadData()
-          });
+          await this.contract.methods.setMessage(this.inputText).send({from: this.web3.eth.accounts[0]})
+           this.addLog()
                 
        },
       
-       addLog: function(err, logg){
-         this.contract.message((error, message)=>{
-           this.message=message
+       addLog: async function(){
+        this.message = await this.contract.methods.message().call() 
+        
+           
             this.buttonLabel= 'Stich them forever';
-         })
+         
        }
     }
 
