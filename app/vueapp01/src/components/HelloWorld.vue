@@ -45,7 +45,7 @@ export default {
             var contractAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10'
    
             this.contract = new this.web3.eth.Contract(abi, contractAddress);
-            this.message = await this.contract.methods.message().call() 
+            this.addLog()
             
            //this.contract.events.allEvents({},this.addLog)
 
@@ -58,8 +58,8 @@ export default {
  methods:{
        makeBud: async function(){
            this.buttonLabel= 'Writting';
-
-          await this.contract.methods.setMessage(this.inputText).send({from: this.web3.eth.accounts[0]})
+          let address = (await  this.web3.eth.getAccounts())[0]
+          await this.contract.methods.setMessage(this.inputText).send({from: address})
            this.addLog()
                 
        },
