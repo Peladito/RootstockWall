@@ -82,7 +82,7 @@ export default {
          console.log(log)
        }
     }
-  }
+  
 };
 </script>
 

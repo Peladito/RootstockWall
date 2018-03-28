@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-    <img src="./assets/rootstock.png">
-=======
-
->>>>>>> esteban
     <router-view/>
     <div class="footer">
   <p><a href="https://www.koibanx.com/"> Powered by <img src="./assets/kbx.jpg"></a></p>
