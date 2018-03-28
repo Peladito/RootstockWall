@@ -11,12 +11,17 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue);
 /* eslint-disable no-new */
 var web3 = new Web3(Web3.givenProvider);
+var event3 = new Web3(new Web3.providers.WebsocketProvider('ws://127.0.0.1:8546'));
+console.log(event3)
 Vue.mixin({
   data: function() {
     return {
       get web3() {
 
         return web3;
+      },
+      get event3() {
+        return event3;
       }
     }
   }

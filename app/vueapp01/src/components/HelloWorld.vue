@@ -33,6 +33,7 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       contract : null,
+      eventContract: null,
       buttonLabel:"Stich them forever",
       inputText:"",
       message:''
@@ -40,11 +41,14 @@ export default {
   },
    beforeMount: async function(){
       
-     var abi = [{"constant":true,"inputs":[],"name":"message","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"initialMessage","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"newMessage","type":"string"}],"name":"weHaveAMessage","type":"event"},{"constant":false,"inputs":[{"name":"_newMessage","type":"string"}],"name":"setMessage","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]
+            var abi = [{"constant":true,"inputs":[],"name":"message","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"initialMessage","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"newMessage","type":"string"}],"name":"weHaveAMessage","type":"event"},{"constant":false,"inputs":[{"name":"_newMessage","type":"string"}],"name":"setMessage","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]
             
-            var contractAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10'
+            var contractAddress = '0xdf6b3fcdd882fb8a2034916c6124c30dd5f8dd50'
    
             this.contract = new this.web3.eth.Contract(abi, contractAddress);
+            this.eventContract = new this.event3.eth.Contract(abi, contractAddress);
+            console.log(this.eventContract)
+            this.eventContract.events.allEvents({},this.logEvent)
             this.addLog()
             
            //this.contract.events.allEvents({},this.addLog)
@@ -66,10 +70,13 @@ export default {
       
        addLog: async function(){
         this.message = await this.contract.methods.message().call() 
-        
-           
-            this.buttonLabel= 'Stich them forever';
+        this.buttonLabel= 'Stich them forever';
          
+       },
+       logEvent: function(err, log){
+         console.log('event logging')
+         console.log(err)
+         console.log(log)
        }
     }
 
