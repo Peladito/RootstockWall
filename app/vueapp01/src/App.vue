@@ -3,7 +3,7 @@
 
     <router-view/>
     <div class="footer">
-  <p><a href="https://www.koibanx.com/"> Powered by <img src="./assets/kbx.jpg"></a></p>
+  <p><a href="https://www.rsk.co/"> Powered by <img src="./assets/logo.png"></a></p>
 </div>
   </div>
 </template>
@@ -28,14 +28,14 @@ export default {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 30px;
+    height: 90px;
     background-color: grey;
     color: white;
     text-align: right;
     
     opacity: 0.75 }
 .footer img{
-  height: 30px;
+  height: 80px;
 }
 .footer a{
   text-decoration: none;

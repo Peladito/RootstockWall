@@ -33,6 +33,11 @@
           "indexed": false,
           "name": "newMessage",
           "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "payed",
+          "type": "uint256"
         }
       ],
       "name": "NewBud",
@@ -48,25 +53,25 @@
       ],
       "name": "setMessage",
       "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
+      "payable": true,
+      "stateMutability": "payable",
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b60405161045d38038061045d833981016040528080518201919050508060009080519060200190610041929190610048565b50506100ed565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061008957805160ff19168380011785556100b7565b828001600101855582156100b7579182015b828111156100b657825182559160200191906001019061009b565b5b5090506100c491906100c8565b5090565b6100ea91905b808211156100e65760008160009055506001016100ce565b5090565b90565b610361806100fc6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063368b877214610051578063e21f37ce146100ae575b600080fd5b341561005c57600080fd5b6100ac600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061013c565b005b34156100b957600080fd5b6100c16101f2565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101015780820151818401526020810190506100e6565b50505050905090810190601f16801561012e5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b8060009080519060200190610152929190610290565b507f375c3a203bc9fde6e03f5456ed9b97b0cc215df136bdb08145351070b640b716816040518080602001828103825283818151815260200191508051906020019080838360005b838110156101b557808201518184015260208101905061019a565b50505050905090810190601f1680156101e25780820380516001836020036101000a031916815260200191505b509250505060405180910390a150565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102885780601f1061025d57610100808354040283529160200191610288565b820191906000526020600020905b81548152906001019060200180831161026b57829003601f168201915b505050505081565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102d157805160ff19168380011785556102ff565b828001600101855582156102ff579182015b828111156102fe5782518255916020019190600101906102e3565b5b50905061030c9190610310565b5090565b61033291905b8082111561032e576000816000905550600101610316565b5090565b905600a165627a7a72305820a1c93f831fe7800ea41fb94ece3205e16a01d84a7904e30e97f165561a7cc62d0029",
-  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063368b877214610051578063e21f37ce146100ae575b600080fd5b341561005c57600080fd5b6100ac600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061013c565b005b34156100b957600080fd5b6100c16101f2565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101015780820151818401526020810190506100e6565b50505050905090810190601f16801561012e5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b8060009080519060200190610152929190610290565b507f375c3a203bc9fde6e03f5456ed9b97b0cc215df136bdb08145351070b640b716816040518080602001828103825283818151815260200191508051906020019080838360005b838110156101b557808201518184015260208101905061019a565b50505050905090810190601f1680156101e25780820380516001836020036101000a031916815260200191505b509250505060405180910390a150565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102885780601f1061025d57610100808354040283529160200191610288565b820191906000526020600020905b81548152906001019060200180831161026b57829003601f168201915b505050505081565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102d157805160ff19168380011785556102ff565b828001600101855582156102ff579182015b828111156102fe5782518255916020019190600101906102e3565b5b50905061030c9190610310565b5090565b61033291905b8082111561032e576000816000905550600101610316565b5090565b905600a165627a7a72305820a1c93f831fe7800ea41fb94ece3205e16a01d84a7904e30e97f165561a7cc62d0029",
-  "sourceMap": "28:459:0:-;;;135:96;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;209:14;199:7;:24;;;;;;;;;;;;:::i;:::-;;135:96;28:459;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "28:459:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:117;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;60:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:117:0;435:11;425:7;:21;;;;;;;;;;;;:::i;:::-;;457:19;464:11;457:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;367:117:0;:::o;60:21::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;28:459::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.18;\r\n\r\ncontract RootstockWall {\r\n\r\n    string public message;\r\n\r\n    /** constructor with initial Message */\r\n    function RootstockWall(string initialMessage) public {\r\n        message = initialMessage;\r\n    }\r\n\r\n    /** Event fired when new message is deployed */\r\n    event NewBud(string newMessage);\r\n    \r\n    /** sets a new message */\r\n    function setMessage(string _newMessage) public {\r\n        message = _newMessage;\r\n        NewBud(_newMessage);\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\esteb\\Documents\\proyects\\RootstockWall\\contracts\\RootstockWall.sol",
+  "bytecode": "0x6060604052341561000f57600080fd5b60405161045a38038061045a833981016040528080518201919050508060009080519060200190610041929190610048565b50506100ed565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061008957805160ff19168380011785556100b7565b828001600101855582156100b7579182015b828111156100b657825182559160200191906001019061009b565b5b5090506100c491906100c8565b5090565b6100ea91905b808211156100e65760008160009055506001016100ce565b5090565b90565b61035e806100fc6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063368b877214610051578063e21f37ce146100a3575b600080fd5b6100a1600480803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610131565b005b34156100ae57600080fd5b6100b66101ef565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f65780820151818401526020810190506100db565b50505050905090810190601f1680156101235780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b806000908051906020019061014792919061028d565b507fe433598f1afe5cd952c384244fbd47bbc14c8b1a102c5c3551d3901d50880a2d81346040518080602001838152602001828103825284818151815260200191508051906020019080838360005b838110156101b1578082015181840152602081019050610196565b50505050905090810190601f1680156101de5780820380516001836020036101000a031916815260200191505b50935050505060405180910390a150565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102855780601f1061025a57610100808354040283529160200191610285565b820191906000526020600020905b81548152906001019060200180831161026857829003601f168201915b505050505081565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102ce57805160ff19168380011785556102fc565b828001600101855582156102fc579182015b828111156102fb5782518255916020019190600101906102e0565b5b509050610309919061030d565b5090565b61032f91905b8082111561032b576000816000905550600101610313565b5090565b905600a165627a7a72305820fbd57bbdc18733ac03e9383d325b99e68d7c55c68821e0ac519765db8bbba3820029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063368b877214610051578063e21f37ce146100a3575b600080fd5b6100a1600480803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610131565b005b34156100ae57600080fd5b6100b66101ef565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f65780820151818401526020810190506100db565b50505050905090810190601f1680156101235780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b806000908051906020019061014792919061028d565b507fe433598f1afe5cd952c384244fbd47bbc14c8b1a102c5c3551d3901d50880a2d81346040518080602001838152602001828103825284818151815260200191508051906020019080838360005b838110156101b1578082015181840152602081019050610196565b50505050905090810190601f1680156101de5780820380516001836020036101000a031916815260200191505b50935050505060405180910390a150565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102855780601f1061025a57610100808354040283529160200191610285565b820191906000526020600020905b81548152906001019060200180831161026857829003601f168201915b505050505081565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102ce57805160ff19168380011785556102fc565b828001600101855582156102fc579182015b828111156102fb5782518255916020019190600101906102e0565b5b509050610309919061030d565b5090565b61032f91905b8082111561032b576000816000905550600101610313565b5090565b905600a165627a7a72305820fbd57bbdc18733ac03e9383d325b99e68d7c55c68821e0ac519765db8bbba3820029",
+  "sourceMap": "28:490:0:-;;;135:96;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;209:14;199:7;:24;;;;;;;;;;;;:::i;:::-;;135:96;28:490;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "28:490:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;379:136;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;60:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;379:136:0;455:11;445:7;:21;;;;;;;;;;;;:::i;:::-;;477:30;484:11;497:9;477:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;379:136:0;:::o;60:21::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;28:490::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.18;\r\n\r\ncontract RootstockWall {\r\n\r\n    string public message;\r\n\r\n    /** constructor with initial Message */\r\n    function RootstockWall(string initialMessage) public {\r\n        message = initialMessage;\r\n    }\r\n\r\n    /** Event fired when new message is deployed */\r\n    event NewBud(string newMessage, uint payed);\r\n    \r\n    /** sets a new message */\r\n    function setMessage(string _newMessage) payable public {\r\n        message = _newMessage;\r\n        NewBud(_newMessage, msg.value);\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\esteb\\Documents\\proyects\\RootstockLog\\contracts\\RootstockWall.sol",
   "ast": {
-    "absolutePath": "/C/Users/esteb/Documents/proyects/RootstockWall/contracts/RootstockWall.sol",
+    "absolutePath": "/C/Users/esteb/Documents/proyects/RootstockLog/contracts/RootstockWall.sol",
     "exportedSymbols": {
       "RootstockWall": [
-        32
+        36
       ]
     },
-    "id": 33,
+    "id": 37,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -86,9 +91,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 32,
+        "id": 36,
         "linearizedBaseContracts": [
-          32
+          36
         ],
         "name": "RootstockWall",
         "nodeType": "ContractDefinition",
@@ -98,7 +103,7 @@
             "id": 3,
             "name": "message",
             "nodeType": "VariableDeclaration",
-            "scope": 32,
+            "scope": 36,
             "src": "60:21:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -220,7 +225,7 @@
               "parameters": [],
               "src": "188:0:0"
             },
-            "scope": 32,
+            "scope": 36,
             "src": "135:96:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -228,11 +233,11 @@
           },
           {
             "anonymous": false,
-            "id": 17,
+            "id": 19,
             "name": "NewBud",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 16,
+              "id": 18,
               "nodeType": "ParameterList",
               "parameters": [
                 {
@@ -241,7 +246,7 @@
                   "indexed": false,
                   "name": "newMessage",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17,
+                  "scope": 19,
                   "src": "305:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -261,34 +266,61 @@
                   },
                   "value": null,
                   "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17,
+                  "indexed": false,
+                  "name": "payed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19,
+                  "src": "324:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "324:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
                 }
               ],
-              "src": "304:19:0"
+              "src": "304:31:0"
             },
-            "src": "292:32:0"
+            "src": "292:44:0"
           },
           {
             "body": {
-              "id": 30,
+              "id": 34,
               "nodeType": "Block",
-              "src": "414:70:0",
+              "src": "434:81:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 24,
+                    "id": 26,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 22,
+                      "id": 24,
                       "name": "message",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "425:7:0",
+                      "src": "445:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -298,26 +330,26 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 23,
+                      "id": 25,
                       "name": "_newMessage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 19,
-                      "src": "435:11:0",
+                      "referencedDeclaration": 21,
+                      "src": "455:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "425:21:0",
+                    "src": "445:21:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 25,
+                  "id": 27,
                   "nodeType": "ExpressionStatement",
-                  "src": "425:21:0"
+                  "src": "445:21:0"
                 },
                 {
                   "expression": {
@@ -325,15 +357,44 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 27,
+                        "id": 29,
                         "name": "_newMessage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 19,
-                        "src": "464:11:0",
+                        "referencedDeclaration": 21,
+                        "src": "484:11:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 30,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 48,
+                          "src": "497:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 31,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "497:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       }
                     ],
@@ -342,20 +403,24 @@
                         {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       ],
-                      "id": 26,
+                      "id": 28,
                       "name": "NewBud",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 17,
-                      "src": "457:6:0",
+                      "referencedDeclaration": 19,
+                      "src": "477:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
-                        "typeString": "function (string memory)"
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_uint256_$returns$__$",
+                        "typeString": "function (string memory,uint256)"
                       }
                     },
-                    "id": 28,
+                    "id": 32,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -363,19 +428,19 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "457:19:0",
+                    "src": "477:30:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 29,
+                  "id": 33,
                   "nodeType": "ExpressionStatement",
-                  "src": "457:19:0"
+                  "src": "477:30:0"
                 }
               ]
             },
-            "id": 31,
+            "id": 35,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -383,16 +448,16 @@
             "name": "setMessage",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 20,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 19,
+                  "id": 21,
                   "name": "_newMessage",
                   "nodeType": "VariableDeclaration",
-                  "scope": 31,
-                  "src": "387:18:0",
+                  "scope": 35,
+                  "src": "399:18:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -400,10 +465,10 @@
                     "typeString": "string memory"
                   },
                   "typeName": {
-                    "id": 18,
+                    "id": 20,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "387:6:0",
+                    "src": "399:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string storage pointer"
@@ -413,36 +478,36 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "386:20:0"
+              "src": "398:20:0"
             },
-            "payable": false,
+            "payable": true,
             "returnParameters": {
-              "id": 21,
+              "id": 23,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "414:0:0"
+              "src": "434:0:0"
             },
-            "scope": 32,
-            "src": "367:117:0",
-            "stateMutability": "nonpayable",
+            "scope": 36,
+            "src": "379:136:0",
+            "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 33,
-        "src": "28:459:0"
+        "scope": 37,
+        "src": "28:490:0"
       }
     ],
-    "src": "0:489:0"
+    "src": "0:520:0"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/esteb/Documents/proyects/RootstockWall/contracts/RootstockWall.sol",
+    "absolutePath": "/C/Users/esteb/Documents/proyects/RootstockLog/contracts/RootstockWall.sol",
     "exportedSymbols": {
       "RootstockWall": [
-        32
+        36
       ]
     },
-    "id": 33,
+    "id": 37,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -462,9 +527,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 32,
+        "id": 36,
         "linearizedBaseContracts": [
-          32
+          36
         ],
         "name": "RootstockWall",
         "nodeType": "ContractDefinition",
@@ -474,7 +539,7 @@
             "id": 3,
             "name": "message",
             "nodeType": "VariableDeclaration",
-            "scope": 32,
+            "scope": 36,
             "src": "60:21:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -596,7 +661,7 @@
               "parameters": [],
               "src": "188:0:0"
             },
-            "scope": 32,
+            "scope": 36,
             "src": "135:96:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -604,11 +669,11 @@
           },
           {
             "anonymous": false,
-            "id": 17,
+            "id": 19,
             "name": "NewBud",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 16,
+              "id": 18,
               "nodeType": "ParameterList",
               "parameters": [
                 {
@@ -617,7 +682,7 @@
                   "indexed": false,
                   "name": "newMessage",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17,
+                  "scope": 19,
                   "src": "305:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -637,34 +702,61 @@
                   },
                   "value": null,
                   "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17,
+                  "indexed": false,
+                  "name": "payed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19,
+                  "src": "324:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "324:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
                 }
               ],
-              "src": "304:19:0"
+              "src": "304:31:0"
             },
-            "src": "292:32:0"
+            "src": "292:44:0"
           },
           {
             "body": {
-              "id": 30,
+              "id": 34,
               "nodeType": "Block",
-              "src": "414:70:0",
+              "src": "434:81:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 24,
+                    "id": 26,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 22,
+                      "id": 24,
                       "name": "message",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "425:7:0",
+                      "src": "445:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -674,26 +766,26 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 23,
+                      "id": 25,
                       "name": "_newMessage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 19,
-                      "src": "435:11:0",
+                      "referencedDeclaration": 21,
+                      "src": "455:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "425:21:0",
+                    "src": "445:21:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 25,
+                  "id": 27,
                   "nodeType": "ExpressionStatement",
-                  "src": "425:21:0"
+                  "src": "445:21:0"
                 },
                 {
                   "expression": {
@@ -701,15 +793,44 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 27,
+                        "id": 29,
                         "name": "_newMessage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 19,
-                        "src": "464:11:0",
+                        "referencedDeclaration": 21,
+                        "src": "484:11:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 30,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 48,
+                          "src": "497:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 31,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "497:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       }
                     ],
@@ -718,20 +839,24 @@
                         {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       ],
-                      "id": 26,
+                      "id": 28,
                       "name": "NewBud",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 17,
-                      "src": "457:6:0",
+                      "referencedDeclaration": 19,
+                      "src": "477:6:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
-                        "typeString": "function (string memory)"
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_uint256_$returns$__$",
+                        "typeString": "function (string memory,uint256)"
                       }
                     },
-                    "id": 28,
+                    "id": 32,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -739,19 +864,19 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "457:19:0",
+                    "src": "477:30:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 29,
+                  "id": 33,
                   "nodeType": "ExpressionStatement",
-                  "src": "457:19:0"
+                  "src": "477:30:0"
                 }
               ]
             },
-            "id": 31,
+            "id": 35,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -759,16 +884,16 @@
             "name": "setMessage",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 20,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 19,
+                  "id": 21,
                   "name": "_newMessage",
                   "nodeType": "VariableDeclaration",
-                  "scope": 31,
-                  "src": "387:18:0",
+                  "scope": 35,
+                  "src": "399:18:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -776,10 +901,10 @@
                     "typeString": "string memory"
                   },
                   "typeName": {
-                    "id": 18,
+                    "id": 20,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "387:6:0",
+                    "src": "399:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string storage pointer"
@@ -789,27 +914,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "386:20:0"
+              "src": "398:20:0"
             },
-            "payable": false,
+            "payable": true,
             "returnParameters": {
-              "id": 21,
+              "id": 23,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "414:0:0"
+              "src": "434:0:0"
             },
-            "scope": 32,
-            "src": "367:117:0",
-            "stateMutability": "nonpayable",
+            "scope": 36,
+            "src": "379:136:0",
+            "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 33,
-        "src": "28:459:0"
+        "scope": 37,
+        "src": "28:490:0"
       }
     ],
-    "src": "0:489:0"
+    "src": "0:520:0"
   },
   "compiler": {
     "name": "solc",
@@ -825,8 +950,8 @@
     "100": {
       "events": {},
       "links": {},
-      "address": "0xdf6b3fcdd882fb8a2034916c6124c30dd5f8dd50",
-      "transactionHash": "0x1a57331b8de975afd374f86f8550ca71a5d2e4f40d723d1548a0b14105f32460"
+      "address": "0x11090607f1c987ea2ce4e25646c2239f058a802c",
+      "transactionHash": "0x660b6adf61cfe87173edd4c8b5c65f13d24d1b221dd4a41edd1a7625175196a1"
     },
     "4447": {
       "events": {},
@@ -842,5 +967,5 @@
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-27T17:56:35.673Z"
+  "updatedAt": "2018-03-28T16:19:58.702Z"
 }

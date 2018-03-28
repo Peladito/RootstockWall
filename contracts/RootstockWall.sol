@@ -10,11 +10,11 @@ contract RootstockWall {
     }
 
     /** Event fired when new message is deployed */
-    event NewBud(string newMessage);
+    event NewBud(string newMessage, uint payed);
     
     /** sets a new message */
-    function setMessage(string _newMessage) public {
+    function setMessage(string _newMessage) payable public {
         message = _newMessage;
-        NewBud(_newMessage);
+        NewBud(_newMessage, msg.value);
     }
 }
